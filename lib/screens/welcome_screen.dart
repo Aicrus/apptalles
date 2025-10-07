@@ -13,16 +13,17 @@ class WelcomeScreen extends StatelessWidget {
       backgroundColor: AppColors.white,
       body: Stack(
         children: [
-          // Fundo verde com bordas arredondadas
+          // Círculo verde de fundo no topo com ilustração
           Positioned(
-            left: 0,
-            top: -130,
-            right: 0,
-            child: Image.asset(
-              'assets/images/Ellipse 14.png',
-              width: MediaQuery.of(context).size.width,
+            left: -158,
+            top: -112,
+            child: Container(
+              width: 596,
               height: 489,
-              fit: BoxFit.cover,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.primary,
+              ),
             ),
           ),
           
@@ -35,11 +36,28 @@ class WelcomeScreen extends StatelessWidget {
                   children: [
                     const SizedBox(height: 80),
                     
-                    // Logo do App
-                    Image.asset(
-                      'assets/images/Group 771.png',
-                      width: 120,
-                      height: 40,
+                    // Logo e Nome do App
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // Ícone da logo (vegetais)
+                        Image.asset(
+                          'assets/images/Group 771.png',
+                          width: 28,
+                          height: 34,
+                        ),
+                        const SizedBox(width: 8),
+                        // Nome do app
+                        Text(
+                          'Kangsayur',
+                          style: GoogleFonts.montserratAlternates(
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.white,
+                            height: 1.21,
+                          ),
+                        ),
+                      ],
                     ),
                     
                     const SizedBox(height: 40),
@@ -187,27 +205,23 @@ class _SocialLoginButton extends StatelessWidget {
           padding: EdgeInsets.zero,
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(width: 10), // Padding da esquerda
             Image.asset(
               icon,
               width: 18,
               height: 18,
             ),
             const SizedBox(width: 12),
-            Expanded(
-              child: Text(
-                label,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: textColor,
-                ),
+            Text(
+              label,
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: textColor,
               ),
             ),
-            const SizedBox(width: 40), // Espaço para balancear o ícone
           ],
         ),
       ),
