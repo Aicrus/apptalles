@@ -16,7 +16,7 @@ class WelcomeScreen extends StatelessWidget {
           // Fundo verde com bordas arredondadas
           Positioned(
             left: 0,
-            top: 0,
+            top: -130,
             right: 0,
             child: Image.asset(
               'assets/images/Ellipse 14.png',
