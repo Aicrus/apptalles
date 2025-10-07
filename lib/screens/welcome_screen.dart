@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../design_system/design_system.dart';
 import '../components/components.dart';
+import 'onboarding_screen.dart';
 
 /// Tela de boas-vindas com opções de Login e Registro
 class WelcomeScreen extends StatelessWidget {
@@ -78,7 +79,11 @@ class WelcomeScreen extends StatelessWidget {
                           PrimaryButton(
                             text: 'Login',
                             onPressed: () {
-                              // TODO: Navegar para tela de login
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => const OnboardingScreen(),
+                                ),
+                              );
                             },
                           ),
                           
