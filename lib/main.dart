@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'design_system/design_system.dart';
+import 'components/buttons.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,8 +69,90 @@ class TodosComponentesPage extends StatelessWidget {
       ),
       body: Container(
         color: Colors.white,
-        alignment: Alignment.center,
-        child: const Text('Todos os componentes'),
+        padding: const EdgeInsets.all(20),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Botões',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 20),
+              
+              // Botão Primário
+              const Text(
+                'Primary Button (Login)',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 12),
+              PrimaryButton(
+                text: 'Login',
+                onPressed: () {
+                  // Action
+                },
+              ),
+              const SizedBox(height: 30),
+              
+              // Botão Secundário
+              const Text(
+                'Secondary Button (Register)',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 12),
+              SecondaryButton(
+                text: 'Register',
+                onPressed: () {
+                  // Action
+                },
+              ),
+              const SizedBox(height: 30),
+              
+              // Botão Primário (Loading)
+              const Text(
+                'Primary Button (Loading)',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 12),
+              const PrimaryButton(
+                text: 'Login',
+                isLoading: true,
+              ),
+              const SizedBox(height: 30),
+              
+              // Botão Secundário (Loading)
+              const Text(
+                'Secondary Button (Loading)',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 12),
+              const SecondaryButton(
+                text: 'Register',
+                isLoading: true,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

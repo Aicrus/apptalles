@@ -6,9 +6,11 @@ class AppColors {
   AppColors._();
 
   static const Color primary = Color(0xFF4CAD73);
+  static const Color primaryDark = Color(0xFF2E9D5B);
   static const Color textHighlight = Color(0xFF333333);
   static const Color textMuted = Color(0xFFBDBDBD);
   static const Color background = Color(0xFFFFFFFF);
+  static const Color white = Color(0xFFFFFFFF);
 }
 
 ThemeData buildAppTheme() {
@@ -18,7 +20,6 @@ ThemeData buildAppTheme() {
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primary,
       primary: AppColors.primary,
-      background: AppColors.background,
       surface: AppColors.background,
     ),
     scaffoldBackgroundColor: AppColors.background,
