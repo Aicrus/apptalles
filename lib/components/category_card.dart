@@ -20,8 +20,8 @@ class CategoryCard extends StatelessWidget {
       onTap: onTap,
       child: SizedBox(
         width: 76,
-        height: 113,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             // Ícone da categoria
@@ -55,8 +55,7 @@ class CategoryCard extends StatelessWidget {
             ),
             const SizedBox(height: 9),
             // Nome da categoria
-            SizedBox(
-              width: 76,
+            Flexible(
               child: Text(
                 name,
                 style: const TextStyle(

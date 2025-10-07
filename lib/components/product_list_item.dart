@@ -69,49 +69,56 @@ class ProductListItem extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 11, bottom: 11, right: 9),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     // Nome do produto
-                    Text(
-                      name,
-                      style: const TextStyle(
-                        fontFamily: 'Inter',
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.textHighlight,
-                        height: 1.23,
+                    Flexible(
+                      child: Text(
+                        name,
+                        style: const TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.textHighlight,
+                          height: 1.23,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 4),
                     // Preço
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Rp ${_formatPrice(price)}',
-                          style: const TextStyle(
-                            fontFamily: 'Inter',
-                            fontSize: 11,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.primary,
-                            height: 1.91,
-                            letterSpacing: -0.32,
+                    Flexible(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              'Rp ${_formatPrice(price)}',
+                              style: const TextStyle(
+                                fontFamily: 'Inter',
+                                fontSize: 11,
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.primary,
+                                height: 1.91,
+                                letterSpacing: -0.32,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
-                        ),
-                        Text(
-                          ' / $unit',
-                          style: const TextStyle(
-                            fontFamily: 'Inter',
-                            fontSize: 8,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.textSecondary,
-                            height: 1.63,
-                            letterSpacing: 0.066,
+                          Text(
+                            ' / $unit',
+                            style: const TextStyle(
+                              fontFamily: 'Inter',
+                              fontSize: 8,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.textSecondary,
+                              height: 1.63,
+                              letterSpacing: 0.066,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
