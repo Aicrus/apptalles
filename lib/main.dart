@@ -289,6 +289,53 @@ class TodosComponentesPage extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 50),
+              
+              // Seção de Bottom Navigation Bar
+              const Text(
+                'Bottom Navigation Bar',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 20),
+              
+              // Exemplo com largura fixa
+              const Text(
+                'Custom Bottom Navigation Bar (377px)',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 12),
+              SimpleBottomNavigationBar(
+                currentIndex: 1,
+                onTap: (index) {
+                  // Action
+                },
+              ),
+              const SizedBox(height: 30),
+              
+              // Exemplo com largura total
+              const Text(
+                'Simple Bottom Navigation Bar (Full Width)',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 12),
+              SimpleBottomNavigationBar(
+                currentIndex: 2,
+                onTap: (index) {
+                  // Action
+                },
+              ),
               const SizedBox(height: 20),
             ],
           ),
