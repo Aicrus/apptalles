@@ -3,7 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'design_system/design_system.dart';
-import 'components/buttons.dart';
+import 'components/components.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -150,6 +150,146 @@ class TodosComponentesPage extends StatelessWidget {
                 text: 'Register',
                 isLoading: true,
               ),
+              const SizedBox(height: 50),
+              
+              // Seção de Cards de Categoria
+              const Text(
+                'Cards de Categoria',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 20),
+              
+              Row(
+                children: [
+                  CategoryCard(
+                    name: 'Vegetables',
+                    onTap: () {
+                      // Action
+                    },
+                  ),
+                  const SizedBox(width: 20),
+                  CategoryCard(
+                    name: 'Fruits',
+                    onTap: () {
+                      // Action
+                    },
+                  ),
+                  const SizedBox(width: 20),
+                  CategoryCard(
+                    name: 'Dairy',
+                    onTap: () {
+                      // Action
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(height: 50),
+              
+              // Seção de Cards de Produto
+              const Text(
+                'Cards de Produto',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 20),
+              
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    ProductCard(
+                      name: 'Fresh Carrot',
+                      imageUrl: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400',
+                      price: 18000,
+                      oldPrice: 21000,
+                      unit: 'kg',
+                      onTap: () {
+                        // Action
+                      },
+                      onAddToCart: () {
+                        // Action
+                      },
+                      onFavoriteToggle: () {
+                        // Action
+                      },
+                    ),
+                    const SizedBox(width: 20),
+                    ProductCard(
+                      name: 'Fresh Tomato',
+                      imageUrl: 'https://images.unsplash.com/photo-1546470427-e26264d70dcc?w=400',
+                      price: 15000,
+                      unit: 'kg',
+                      isFavorite: true,
+                      onTap: () {
+                        // Action
+                      },
+                      onAddToCart: () {
+                        // Action
+                      },
+                      onFavoriteToggle: () {
+                        // Action
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 50),
+              
+              // Seção de Itens de Lista (Horizontal)
+              const Text(
+                'Itens de Lista (Horizontal)',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textHighlight,
+                ),
+              ),
+              const SizedBox(height: 20),
+              
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    ProductListItem(
+                      name: 'Fresh Red Chili',
+                      imageUrl: 'https://images.unsplash.com/photo-1583454032902-a8e79950c97c?w=400',
+                      price: 12000,
+                      unit: 'kg',
+                      onTap: () {
+                        // Action
+                      },
+                    ),
+                    const SizedBox(width: 15),
+                    ProductListItem(
+                      name: 'Fresh Lettuce',
+                      imageUrl: 'https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?w=400',
+                      price: 8000,
+                      unit: 'kg',
+                      onTap: () {
+                        // Action
+                      },
+                    ),
+                    const SizedBox(width: 15),
+                    ProductListItem(
+                      name: 'Fresh Spinach',
+                      imageUrl: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400',
+                      price: 10000,
+                      unit: 'kg',
+                      onTap: () {
+                        // Action
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),

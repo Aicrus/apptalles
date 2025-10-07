@@ -7,10 +7,13 @@ class AppColors {
 
   static const Color primary = Color(0xFF4CAD73);
   static const Color primaryDark = Color(0xFF2E9D5B);
+  static const Color primaryLight = Color(0x3351BC7D); // rgba(81,188,125,0.2)
   static const Color textHighlight = Color(0xFF333333);
+  static const Color textSecondary = Color(0xFF828282);
   static const Color textMuted = Color(0xFFBDBDBD);
   static const Color background = Color(0xFFFFFFFF);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color cardBackground = Color(0xFFC4C4C4);
 }
 
 ThemeData buildAppTheme() {
