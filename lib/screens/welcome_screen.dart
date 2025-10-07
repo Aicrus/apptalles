@@ -35,28 +35,11 @@ class WelcomeScreen extends StatelessWidget {
                   children: [
                     const SizedBox(height: 80),
                     
-                    // Logo e Nome do App
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // Ícone da logo (vegetais)
-                        Image.asset(
-                          'assets/images/Group 771.png',
-                          width: 28,
-                          height: 34,
-                        ),
-                        const SizedBox(width: 8),
-                        // Nome do app
-                        Text(
-                          'Kangsayur',
-                          style: GoogleFonts.montserratAlternates(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.white,
-                            height: 1.21,
-                          ),
-                        ),
-                      ],
+                    // Logo do App
+                    Image.asset(
+                      'assets/images/Group 771.png',
+                      width: 120,
+                      height: 40,
                     ),
                     
                     const SizedBox(height: 40),
