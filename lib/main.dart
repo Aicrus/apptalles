@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Supabase.initialize(
-    url: 'https://fovtdamjplseciadcvtt.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvdnRkYW1qcGxzZWNpYWRjdnR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4NjEzNDUsImV4cCI6MjA3NTQzNzM0NX0.3BHgkefw6BnHfaM8K3crkdiP4B7Otyu3X9yv9HWqEJI',
-  );
+  await dotenv.load(fileName: '.env');
+  final supabaseUrl = dotenv.env['SUPABASE_URL'];
+  final supabaseAnonKey = dotenv.env['SUPABASE_ANON_KEY'];
+  if (supabaseUrl == null || supabaseAnonKey == null) {
+    throw Exception('Supabase credentials not found. Please check .env file.');
+  }
+  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
   runApp(const MyApp());
 }
 
