@@ -204,23 +204,27 @@ class _SocialLoginButton extends StatelessWidget {
           padding: EdgeInsets.zero,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(width: 10), // Padding da esquerda
             Image.asset(
               icon,
               width: 18,
               height: 18,
             ),
             const SizedBox(width: 12),
-            Text(
-              label,
-              style: TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: textColor,
+            Expanded(
+              child: Text(
+                label,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: textColor,
+                ),
               ),
             ),
+            const SizedBox(width: 40), // Espaço para balancear o ícone
           ],
         ),
       ),
